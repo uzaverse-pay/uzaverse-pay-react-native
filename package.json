@@ -1,6 +1,6 @@
 {
   "name": "react-native-uzaverse-pay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Native library that enables developers to integrate online payment functionality into their apps. It supports various payment methods, such as credit cards, mobile money, and bank transfers. It works seamlessly with Android and iOS. With Uzaverse Pay, you can easily accept payments from your users and grow your business",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

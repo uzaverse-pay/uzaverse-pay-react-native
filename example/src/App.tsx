@@ -4,11 +4,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { multiply } from 'react-native-uzaverse-pay';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const result = multiply(3, 10);
 
   return (
     <View style={styles.container}>
