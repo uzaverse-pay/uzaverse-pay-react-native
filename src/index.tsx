@@ -1,3 +1,3 @@
-export function multiply(a: number, b: number) {
-  return a * b;
-}
+import UzaversePayBottomSheet from './components/BottomSheet';
+
+export { UzaversePayBottomSheet };
