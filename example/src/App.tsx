@@ -1,17 +1,31 @@
-import * as React from 'react';
+import React, { useRef } from 'react';
 
-import { StyleSheet, View, Button, Text } from 'react-native';
-import { UzaversePayBottomSheet } from 'react-native-uzaverse-pay';
+import { StyleSheet, Button } from 'react-native';
+import { UzaversePaySheetContent } from 'react-native-uzaverse-pay';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import ScreenWrapper from './ScreenWrapper';
 
 export default function App() {
-  const [showModal, setShowModal] = React.useState(false);
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const snapPoints = ['25%', '48%'];
+
+  function handlePresentModal() {
+    bottomSheetModalRef.current?.present();
+  }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome, this is a test app</Text>
-      <Button title="Donate" onPress={() => setShowModal(!showModal)} />
-      <UzaversePayBottomSheet state={showModal} />
-    </View>
+    <ScreenWrapper style={styles.container}>
+      <Button title="Donate" onPress={handlePresentModal} />
+
+      <BottomSheetModal
+        ref={bottomSheetModalRef}
+        snapPoints={snapPoints}
+        index={1}
+        backgroundStyle={styles.sheetStyle}
+      >
+        <UzaversePaySheetContent />
+      </BottomSheetModal>
+    </ScreenWrapper>
   );
 }
 
@@ -27,10 +41,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'red',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  sheetStyle: {
+    borderRadius: 20,
+    backgroundColor: '#ff7900',
   },
 });
