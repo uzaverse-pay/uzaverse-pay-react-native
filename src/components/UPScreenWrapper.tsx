@@ -8,9 +8,11 @@ type PropsType = {
   children: ReactNode;
 };
 
+const defaultStyle = { flex: 1 };
+
 const UPScreenWrapper = (props: PropsType) => {
   return (
-    <GestureHandlerRootView style={props.style}>
+    <GestureHandlerRootView style={[props.style, defaultStyle]}>
       <BottomSheetModalProvider>{props.children}</BottomSheetModalProvider>
     </GestureHandlerRootView>
   );

@@ -1,17 +1,13 @@
 import React, { forwardRef } from 'react';
 import UPModalContent from './UPModalContent';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import type { StyleProp, ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
 import type { BottomSheetModalMethods } from '@gorhom/bottom-sheet/lib/typescript/types';
 
-type PropsTypes = {
-  style: StyleProp<
-    Omit<ViewStyle, 'left' | 'right' | 'position' | 'top' | 'bottom'>
-  >;
-};
+type PropsTypes = {};
 
 const UPModal = forwardRef<BottomSheetModalMethods, PropsTypes>(
-  (props: PropsTypes, ref) => {
+  (_props: PropsTypes, ref) => {
     const snapPoints = ['25%', '48%'];
 
     return (
@@ -19,7 +15,7 @@ const UPModal = forwardRef<BottomSheetModalMethods, PropsTypes>(
         ref={ref}
         snapPoints={snapPoints}
         index={1}
-        backgroundStyle={props.style}
+        backgroundStyle={styles.container}
       >
         <UPModalContent />
       </BottomSheetModal>
@@ -28,3 +24,10 @@ const UPModal = forwardRef<BottomSheetModalMethods, PropsTypes>(
 );
 
 export default UPModal;
+
+const styles = StyleSheet.create({
+  container: {
+    borderRadius: 20,
+    backgroundColor: '#ff7900',
+  },
+});

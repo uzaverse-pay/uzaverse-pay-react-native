@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-
 import { StyleSheet, Button } from 'react-native';
 import {
   UPScreenWrapper,
@@ -17,7 +16,7 @@ export default function App() {
   return (
     <UPScreenWrapper style={styles.container}>
       <Button title="Donate" onPress={openModal} />
-      <UPModal ref={upModalRef} style={styles.sheetStyle} />
+      <UPModal ref={upModalRef} />
     </UPScreenWrapper>
   );
 }
@@ -31,12 +30,7 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   container: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  sheetStyle: {
-    borderRadius: 20,
-    backgroundColor: '#ff7900',
   },
 });
