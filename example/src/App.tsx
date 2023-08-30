@@ -1,30 +1,21 @@
 import React, { useRef } from 'react';
 
 import { StyleSheet, Button } from 'react-native';
-import { UzaversePaySheetContent } from 'react-native-uzaverse-pay';
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import ScreenWrapper from './ScreenWrapper';
+import UzaversePayModal from './Modal';
+import UzaversePaySheetModal from './utils';
 
 export default function App() {
-  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = ['25%', '48%'];
+  const bottomSheetModalRef = useRef<UzaversePaySheetModal>(null);
 
-  function handlePresentModal() {
+  function openModal() {
     bottomSheetModalRef.current?.present();
   }
 
   return (
     <ScreenWrapper style={styles.container}>
-      <Button title="Donate" onPress={handlePresentModal} />
-
-      <BottomSheetModal
-        ref={bottomSheetModalRef}
-        snapPoints={snapPoints}
-        index={1}
-        backgroundStyle={styles.sheetStyle}
-      >
-        <UzaversePaySheetContent />
-      </BottomSheetModal>
+      <Button title="Donate" onPress={openModal} />
+      <UzaversePayModal ref={bottomSheetModalRef} style={styles.sheetStyle} />
     </ScreenWrapper>
   );
 }
@@ -41,7 +32,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'red',
   },
   sheetStyle: {
     borderRadius: 20,

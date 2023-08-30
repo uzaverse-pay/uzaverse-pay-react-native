@@ -1,7 +1,7 @@
 import React, { type ReactNode } from 'react';
-import type { StyleProp, ViewStyle } from 'react-native';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import type { StyleProp, ViewStyle } from 'react-native';
 
 type PropsType = {
   style: StyleProp<ViewStyle>;
