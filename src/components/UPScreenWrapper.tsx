@@ -8,7 +8,7 @@ type PropsType = {
   children: ReactNode;
 };
 
-const ScreenWrapper = (props: PropsType) => {
+const UPScreenWrapper = (props: PropsType) => {
   return (
     <GestureHandlerRootView style={props.style}>
       <BottomSheetModalProvider>{props.children}</BottomSheetModalProvider>
@@ -16,4 +16,4 @@ const ScreenWrapper = (props: PropsType) => {
   );
 };
 
-export default ScreenWrapper;
+export default UPScreenWrapper;

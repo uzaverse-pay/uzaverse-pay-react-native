@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function SheetContent() {
+export default function UPModalContent() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>UzaversePay</Text>

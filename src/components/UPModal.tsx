@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { UzaversePaySheetContent } from 'react-native-uzaverse-pay';
+import UPModalContent from './UPModalContent';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import type { StyleProp, ViewStyle } from 'react-native';
 import type { BottomSheetModalMethods } from '@gorhom/bottom-sheet/lib/typescript/types';
@@ -10,7 +10,7 @@ type PropsTypes = {
   >;
 };
 
-const UzaversePayModal = forwardRef<BottomSheetModalMethods, PropsTypes>(
+const UPModal = forwardRef<BottomSheetModalMethods, PropsTypes>(
   (props: PropsTypes, ref) => {
     const snapPoints = ['25%', '48%'];
 
@@ -21,10 +21,10 @@ const UzaversePayModal = forwardRef<BottomSheetModalMethods, PropsTypes>(
         index={1}
         backgroundStyle={props.style}
       >
-        <UzaversePaySheetContent />
+        <UPModalContent />
       </BottomSheetModal>
     );
   }
 );
 
-export default UzaversePayModal;
+export default UPModal;
