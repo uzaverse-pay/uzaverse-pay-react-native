@@ -1,22 +1,28 @@
 import React, { useRef } from 'react';
 
-import { StyleSheet, Button } from 'react-native';
-import ScreenWrapper from './ScreenWrapper';
-import UzaversePayModal from './Modal';
-import UzaversePaySheetModal from './utils';
+import { StyleSheet, Button, View } from 'react-native';
+// import ScreenWrapper from './ScreenWrapper';
+// import UzaversePayModal from './Modal';
+// import UzaversePaySheetModal from './utils';
 
 export default function App() {
-  const bottomSheetModalRef = useRef<UzaversePaySheetModal>(null);
+  // const bottomSheetModalRef = useRef<UzaversePaySheetModal>(null);
 
-  function openModal() {
-    bottomSheetModalRef.current?.present();
-  }
+  // function openModal() {
+  //   bottomSheetModalRef.current?.present();
+  // }
+
+  // return (
+  //   <ScreenWrapper style={styles.container}>
+  //     <Button title="Donate" onPress={openModal} />
+  //     <UzaversePayModal ref={bottomSheetModalRef} style={styles.sheetStyle} />
+  //   </ScreenWrapper>
+  // );
 
   return (
-    <ScreenWrapper style={styles.container}>
-      <Button title="Donate" onPress={openModal} />
-      <UzaversePayModal ref={bottomSheetModalRef} style={styles.sheetStyle} />
-    </ScreenWrapper>
+    <View style={styles.container}>
+      <Button title="Don" />
+    </View>
   );
 }
 
