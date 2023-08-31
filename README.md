@@ -16,16 +16,6 @@ Using yarn
 yarn add react-native-uzaverse-pay
 ```
 
-### Add dependencies
-
-```sh
-npm install react-native-gesture-handler@~2.12.0 react-native-reanimated@~3.3.0
-```
-
-```sh
-yarn add react-native-gesture-handler@~2.12.0 react-native-reanimated@~3.3.0
-```
-
 ### Configurations
 
 - Add react-native-reanimated/plugin plugin to your babel.config.js.
@@ -47,13 +37,14 @@ NOTE: react-native-reanimated/plugin has to be listed last.
 ## Example
 
 ```js
-import React, { useRef } from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Button } from 'react-native';
-import { UPScreenWrapper, UPModal, UPBottomSheetModal } from 'react-native-uzaverse-pay';
+import { UPScreenWrapper, UPModal } from 'react-native-uzaverse-pay';
+import { useRef } from 'react';
 
 export default function App() {
-  const upModalRef = useRef<UPBottomSheetModal>(null);
-
+  const upModalRef = useRef(null);
+  
   function openModal() {
     upModalRef.current?.present();
   }
@@ -62,19 +53,15 @@ export default function App() {
     <UPScreenWrapper style={styles.container}>
       <Button title="Donate" onPress={openModal} />
       <UPModal ref={upModalRef} />
+      <StatusBar style="auto" />
     </UPScreenWrapper>
   );
 }
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 24,
-    textAlign: 'center',
-    margin: 10,
-    fontWeight: 'bold',
-    color: '#000',
-  },
   container: {
+    flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
